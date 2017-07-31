@@ -72,7 +72,6 @@ data class AlignSettings(val fontSettings: FontSettings,
         val totalWidth = textWidths.sum()
         val usableWidth = maxWidth
         val hBoundWidths = textWidths.map { textWidth -> (1.0 * textWidth * usableWidth) / (1.0 * totalWidth) }.map { it.toInt() }
-        println("${texts} ${hBoundWidths} = ${hBoundWidths.sum()}")
         return hBoundWidths
     }
 

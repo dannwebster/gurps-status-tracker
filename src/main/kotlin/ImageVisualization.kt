@@ -138,7 +138,6 @@ class ImageVisualization(val statusTracker : StatusTracker) {
 
         val info = listOf(track.headers.drop(1)) + track.rows.map { row -> row.info }
         val headerHBounds = listOf(col0Width) + headerStyle.textDistributions(info, remainingColWidth)
-        println("${headerHBounds} = ${headerHBounds.sum()}")
 
         drawBorders(g, x, y, headerHBounds, h, headerColor, Color.BLACK)
         track.headers.forEachIndexed { index, header ->
