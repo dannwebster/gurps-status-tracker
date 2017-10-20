@@ -154,6 +154,17 @@ class ImageVisualization(val statusTracker : StatusTracker) {
         return y
     }
 
+    fun drawBubbles(g: Graphics2D, startX: Int, startY: Int, range: IntProgression) {
+        val diameter = 10
+        range.forEach {
+            val y = startY + (diameter * 2)
+            g.background = Colors.WHITE
+            g.stroke = Colors.B
+            g.fillOval(startX, y, diameter, diameter)
+        }
+
+    }
+
     fun drawBorders(g: Graphics2D, x0: Int, y0: Int, headerHBounds: List<Int>, h: Int, fillColor: Color, borderColor: Color) {
         var boundX = x0
         for (hBound in headerHBounds) {
